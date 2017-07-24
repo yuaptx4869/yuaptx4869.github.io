@@ -27,30 +27,30 @@
         //判断访问终端 
         var browser = {
             versions: function() {
-                var u = navigator.userAgent,
-                    app = navigator.appVersion;
+                var ua = navigator.userAgent,
+                    appVersion = navigator.appVersion;
                 return {
-                    trident: u.indexOf('Trident') > -1, //IE内核
-                    presto: u.indexOf('Presto') > -1, //opera内核
-                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                    opera: u.indexOf('Opera') > -1,
-                    chrome: u.indexOf('Chrome') > -1,
-                    firefox: u.indexOf('Firefox') > -1,
-                    safari: u.search(/version\/([\w\.]+).+?(mobile\s?safari|safari)/i) > -1,
-                    ie: u.indexOf('compatible') > -1 && u.indexOf('MSIE') > -1 && u.indexOf('Gecko') == -1,
-                    mobile: u.search(/AppleWebKit.*Mobile/) > -1, //是否为移动终端
-                    ios: u.search(/\(i[^;]+;( U;)? CPU.+Mac OS X/) > -1, //ios终端
-                    android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
-                    winPhone: u.search(/Windows Phone/) > -1, //windows phone终端
-                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhon
-                    iPad: u.indexOf('iPad') > -1, //是否iPad
-                    webApp: u.indexOf('Safari') == -1, //是否Safari web应该程序，没有头部与底部
-                    weibo: u.search(/WeiBo/i) > -1, //是否微博
-                    weixin: u.search(/MicroMessenger/i) > -1, //是否微信
-                    qq: u.search(/\sQQ/i) > -1, //是否QQ
-                    mQQ: u.search(/MQQBrowser/) > -1, //是否QQ手机浏览器
-                    uc: u.search(/UCBrowser/) > -1 //是否UC浏览器
+                    trident: ua.indexOf('Trident') > -1, //IE内核
+                    presto: ua.indexOf('Presto') > -1, //opera内核
+                    webKit: ua.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: ua.indexOf('Gecko') > -1 && ua.indexOf('KHTML') == -1, //火狐内核
+                    opera: ua.indexOf('Opera') > -1,
+                    chrome: ua.indexOf('Chrome') > -1,
+                    firefox: ua.indexOf('Firefox') > -1,
+                    safari: ua.indexOf('Safari') > -1 && ua.indexOf('Chrome') == -1,
+                    ie: ua.indexOf('compatible') > -1 && ua.indexOf('MSIE') > -1 && ua.indexOf('Gecko') == -1,
+                    mobile: ua.search(/AppleWebKit.*Mobile/) > -1, //是否为移动终端
+                    ios: ua.search(/\(i[^;]+;( U;)? CPU.+Mac OS X/) > -1, //ios终端
+                    android: ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1, //android终端
+                    winPhone: ua.search(/Windows Phone/) > -1, //windows phone终端
+                    iPhone: ua.indexOf('iPhone') > -1, //是否为iPhon
+                    iPad: ua.indexOf('iPad') > -1, //是否iPad
+                    webApp: ua.indexOf('Safari') == -1, //是否Safari web应该程序，没有头部与底部
+                    weibo: ua.search(/WeiBo/i) > -1, //是否微博
+                    weixin: ua.search(/MicroMessenger/i) > -1, //是否微信
+                    qq: ua.search(/\sQQ/i) > -1, //是否QQ
+                    mQQ: ua.search(/MQQBrowser/) > -1, //是否QQ手机浏览器
+                    uc: ua.search(/UCBrowser/) > -1 //是否UC浏览器
                 };
             }(),
             language: (navigator.browserLanguage || navigator.language).toLowerCase()
