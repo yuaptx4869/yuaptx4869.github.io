@@ -54,11 +54,11 @@
         }(),
         language = (navigator.language || navigator.browserLanguage).toLowerCase();
     document.write("浏览器UA检测<br>");
-    for (var i in browser.versions) {
-        document.write(i + ' : ' + browser.versions[i] + '<br>');
+    for (var i in browser) {
+        document.write(i + ' : ' + browser[i] + '<br>');
     }
-    console.log("浏览器UA检测" + JSON.stringify(browser.versions));
-    document.write("浏览器语言" + browser.language + '<br>');
+    console.log("浏览器UA检测" + JSON.stringify(browser));
+    document.write("浏览器语言" + language + '<br>');
     document.write("设备像素比" + window.devicePixelRatio + '<br>');
     </script>
 </body>
