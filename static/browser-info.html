@@ -73,11 +73,9 @@
             $clickTestConsole.innerHTML = '';
         });
         $clickTestBtn.addEventListener('touchend', function () {
-            startTime = Date.now();
             $clickTestConsole.appendChild = document.createElement('p').innerText = 'touchend: ' + (Date.now() - startTime) + 'ms';
         });
         $clickTestBtn.addEventListener('click', function () {
-            startTime = Date.now();
             $clickTestConsole.appendChild = document.createElement('p').innerText = 'click: ' + (Date.now() - startTime) + 'ms';
         });
     </script>
