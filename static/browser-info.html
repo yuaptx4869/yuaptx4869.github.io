@@ -73,10 +73,14 @@
             $clickTestConsole.innerHTML = '';
         });
         $clickTestBtn.addEventListener('touchend', function () {
-            $clickTestConsole.appendChild(document.createElement('p').innerText = 'touchend: ' + (Date.now() - startTime) + 'ms');
+            var $p = document.createElement('p');
+            $p.innerText = 'touchend: ' + (Date.now() - startTime) + 'ms';
+            $clickTestConsole.appendChild($p);
         });
         $clickTestBtn.addEventListener('click', function () {
-            $clickTestConsole.appendChild(document.createElement('p').innerText = 'click: ' + (Date.now() - startTime) + 'ms');
+            var $p = document.createElement('p');
+            $p.innerText = 'click: ' + (Date.now() - startTime) + 'ms';
+            $clickTestConsole.appendChild($p);
         });
     </script>
     <a href="https://www.lagou.com/app/h5/h5.html?schema_path=lagou%3A%2F%2Flagou.com%2Fcompany%3Fid%3D147">跳转测试</a>
