@@ -63,24 +63,23 @@
     document.write("页面URL" + ' : ' + window.location.href + '<br>');
     </script>
     <button id="clickTestBtn" style="font-size: 32px;">click Test</button>
-    <div class="click_test_console"></div>
+    <div class="click_test_console">
+        <p></p>
+        <p></p>
+    </div>
     <script type="text/javascript">
         var startTime;
         var $clickTestBtn = document.getElementById('clickTestBtn');
-        var $clickTestConsole = document.querySelector('.click_test_console');
         $clickTestBtn.addEventListener('touchstart', function () {
             startTime = Date.now();
-            // $clickTestConsole.innerHTML = '';
         });
         $clickTestBtn.addEventListener('touchend', function () {
-            var $p = document.createElement('p');
+            var $p = document.querySelectorAll('.click_test_console p')[0];
             $p.innerText = 'touchend: ' + (Date.now() - startTime) + 'ms';
-            $clickTestConsole.appendChild($p);
         });
         $clickTestBtn.addEventListener('click', function () {
-            var $p = document.createElement('p');
+            var $p = document.querySelectorAll('.click_test_console p')[1];
             $p.innerText = 'click: ' + (Date.now() - startTime) + 'ms';
-            $clickTestConsole.appendChild($p);
         });
     </script>
     <a href="https://www.lagou.com/app/h5/h5.html?schema_path=lagou%3A%2F%2Flagou.com%2Fcompany%3Fid%3D147">跳转测试</a>
