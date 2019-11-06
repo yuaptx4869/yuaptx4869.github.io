@@ -62,6 +62,25 @@
     document.write("设备像素比" + ' : ' + window.devicePixelRatio + '<br>');
     document.write("页面URL" + ' : ' + window.location.href + '<br>');
     </script>
+    <button id="clickTestBtn">click Test</button>
+    <div class="click_test_console"></div>
+    <script type="text/javascript">
+        var startTime;
+        var $clickTestBtn = document.getElementById('clickTestBtn');
+        var $clickTestConsole = document.querySelector('.click_test_console');
+        $clickTestBtn.addEventListener('touchstart', function () {
+            startTime = Date.now();
+            $clickTestConsole.innerHTML = '';
+        });
+        $clickTestBtn.addEventListener('touchend', function () {
+            startTime = Date.now();
+            $clickTestConsole.appendChild = document.createElement('p').innerText = 'touchend: ' + (Date.now() - startTime) + 'ms';
+        });
+        $clickTestBtn.addEventListener('click', function () {
+            startTime = Date.now();
+            $clickTestConsole.appendChild = document.createElement('p').innerText = 'click: ' + (Date.now() - startTime) + 'ms';
+        });
+    </script>
     <a href="https://www.lagou.com/app/h5/h5.html?schema_path=lagou%3A%2F%2Flagou.com%2Fcompany%3Fid%3D147">跳转测试</a>
     <a href="javascript:window.location.href='https://www.lagou.com/app/evoke-app/main.html?schema_path=lagou%3A%2F%2Flagou.com%2Fcompany%3Fid%3D147';">跳转测试</a>
     <br />
