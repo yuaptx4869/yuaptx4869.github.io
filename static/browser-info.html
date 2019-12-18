@@ -46,9 +46,9 @@
             webApp: ua.indexOf('Safari') == -1, //是否Safari web应该程序，没有头部与底部
             weibo: ua.search(/WeiBo/i) > -1, //是否微博
             weixin: ua.search(/MicroMessenger/i) > -1, //是否微信
-            qq: ua.search(/\sQQ/i) > -1 && ua.search(/QQBrowser/i) == -1, //是否QQ
-            mQQBrowser: ua.search(/MQQBrowser/) > -1, //是否QQ手机浏览器
-            qqBrowser: ua.search(/QQBrowser/i) > -1 && ua.search(/MQQBrowser/) == -1, //是否QQ浏览器
+            qq: ua.search(/\sQQ/i) > -1 && ua.search(/\sQQBrowser/i) === -1, // 是否QQ
+            mQQBrowser: ua.search(/MQQBrowser/) > -1 && ua.search(/\sQQ/i) === -1, // 是否手机QQ浏览器
+            qqBrowser: ua.search(/QQBrowser/i) > -1 && ua.search(/MQQBrowser/) === -1, // 是否QQ浏览器
             uc: ua.search(/UCBrowser/) > -1 //是否UC浏览器
         };
     }(),
