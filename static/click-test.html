@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no, address=no, email=no, time=no">
+
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <title>~\(≧▽≦)/~</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+<body>
+    <button id="clickTestBtn" style="font-size: 32px;">click Test</button>
+    <div class="click_test_console">
+        <p></p>
+        <p></p>
+    </div>
+    <script type="text/javascript">
+        var startTime;
+        var $clickTestBtn = document.getElementById('clickTestBtn');
+        $clickTestBtn.addEventListener('touchstart', function () {
+            startTime = Date.now();
+        });
+        $clickTestBtn.addEventListener('touchend', function () {
+            var $p = document.querySelectorAll('.click_test_console p')[0];
+            $p.innerText = 'touchend: ' + (Date.now() - startTime) + 'ms';
+        });
+        $clickTestBtn.addEventListener('click', function () {
+            var $p = document.querySelectorAll('.click_test_console p')[1];
+            $p.innerText = 'click: ' + (Date.now() - startTime) + 'ms';
+        });
+    </script>
+</body>
+</html>
