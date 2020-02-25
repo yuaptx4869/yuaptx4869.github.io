@@ -63,7 +63,7 @@
     document.write("浏览器语言" + ' : ' + language + '<br>');
     document.write("设备像素比" + ' : ' + window.devicePixelRatio + '<br>');
     document.write("页面URL" + ' : ' + window.location.href + '<br>');
-    document.write("页面referrer" + ' : ' + document.referrer + '<br>');
+    document.write("页面referrer" + ' : ' + document.referrer || '--' + '<br>');
     </script>
 </body>
 </html>
