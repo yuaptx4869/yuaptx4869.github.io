@@ -77,15 +77,15 @@
         if (window.matchMedia) {
             let darkMql = window.matchMedia('(prefers-color-scheme: dark)');
             if (darkMql.matches) {
-                document.querySelector('a').innerText = 'dark';
+                document.querySelector('#darkModeInfo span').innerText = 'dark';
             } else {
-                document.querySelector('a').innerText = 'light';
+                document.querySelector('#darkModeInfo span').innerText = 'light';
             }
             darkMql.addListener((darkMql) => {
                 if (darkMql.matches) {
-                    document.querySelector('a').innerText = 'dark';
+                    document.querySelector('#darkModeInfo span').innerText = 'dark';
                 } else {
-                    document.querySelector('a').innerText = 'light';
+                    document.querySelector('#darkModeInfo span').innerText = 'light';
                 }
             });
         }
