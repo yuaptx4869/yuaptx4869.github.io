@@ -89,6 +89,32 @@
                 }
             });
         }
+
+        document.addEventListener('readystatechange', function() {
+            console.log(document.readyState);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded');
+        });
+        // $(document).ready(function() {
+        //     console.log('ready');
+        // }); // $(function());
+        $(window).load(function() {
+            console.log('load');
+        });
+
+        window.addEventListener('pageshow', () => {
+            console.log('pageshow');
+        });
+        window.addEventListener('pagehide', () => {
+            console.log('pagehide');
+        });
+        window.addEventListener('popstate', () => {
+            console.log('popstate');
+        });
+
+        // loading interactive complete
+        // loading interactive ready DOMContentLoaded complete load
     </script>
 </body>
 </html>
