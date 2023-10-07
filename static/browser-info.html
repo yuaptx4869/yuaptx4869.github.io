@@ -90,6 +90,7 @@
             });
         }
 
+        console.log(document.readyState);
         document.addEventListener('readystatechange', function() {
             console.log(document.readyState);
         });
@@ -102,22 +103,24 @@
         // $(window).load(function() {
         //     console.log('load');
         // });
-        window.addEventListener('load', () => {
+        window.addEventListener('load', function() {
             console.log('load');
         });
-
-        window.addEventListener('pageshow', () => {
-            console.log('pageshow');
-        });
-        window.addEventListener('pagehide', () => {
-            console.log('pagehide');
-        });
-        window.addEventListener('popstate', () => {
-            console.log('popstate');
-        });
-
         // loading interactive complete
         // loading interactive ready DOMContentLoaded complete load
+
+        window.addEventListener('pageshow', function() {
+            console.log('pageshow');
+        });
+        window.addEventListener('pagehide', function() {
+            console.log('pagehide');
+        });
+        window.addEventListener('popstate', function() {
+            console.log('popstate');
+        });
+        document.addEventListener('visibilitychange', function() {
+            console.log(document.visibilityState);
+        });
     </script>
 </body>
 </html>
